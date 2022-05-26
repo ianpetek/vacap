@@ -1,0 +1,2 @@
+Dependencies:
+pyqt5
