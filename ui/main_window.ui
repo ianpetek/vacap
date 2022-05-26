@@ -14,27 +14,57 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>0</y>
+      <width>591</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>110</y>
+        <width>331</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PRVA STRANICA</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>120</y>
+        <width>331</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>DRUGA STRANICA</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>360</y>
-      <width>331</width>
-      <height>141</height>
+      <x>10</x>
+      <y>230</y>
+      <width>121</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="text">
      <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>120</y>
-      <width>441</width>
-      <height>131</height>
-     </rect>
     </property>
    </widget>
   </widget>
@@ -59,12 +89,12 @@
    <slot>btnClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>438</x>
-     <y>407</y>
+     <x>65</x>
+     <y>288</y>
     </hint>
     <hint type="destinationlabel">
-     <x>574</x>
-     <y>315</y>
+     <x>86</x>
+     <y>182</y>
     </hint>
    </hints>
   </connection>

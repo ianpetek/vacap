@@ -12,7 +12,7 @@ class Window(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
     
     def btnClick(self):
-        self.plainTextEdit.clear()
+        self.stackedWidget.setCurrentIndex((self.stackedWidget.currentIndex() + 1) % self.stackedWidget.count())
 
 
 if __name__ == "__main__":
