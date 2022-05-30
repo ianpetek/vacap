@@ -4,18 +4,26 @@ import socket
 import os
 from _thread import *
 
+def sendMessage(msg, reciever_id, connection):
+  enc_message = msg.encode('utf-8')
+  enc_msg_size = len(enc_message).to_bytes(3, 'big')
+  enc_reciever_id = reciever_id.to_bytes(2,'big')
+  connection.send(enc_msg_size + enc_reciever_id)
+  connection.send(enc_message)
+
 def accept_client(connection, address):
     cl_str = ''
     for i in address_list:
         if(i != address):
             cl_str += str(i[0]) + ':' + str(i[1]) + '\n'
-    connection.send(str.encode(cl_str))
+    sendMessage(cl_str, 0, connection)
+    
     while True:
-        data = connection.recv(2048)
-        response = 'Server message: ' + data.decode('utf-8')
-        if not data:
-            break
-        connection.sendall(str.encode(response))
+        header = connection.recv(5)
+        msg_size = int.from_bytes(header[:3], 'big')
+        recv_id = int.from_bytes(header[3:], 'big')
+        message_text = connection.recv(msg_size)
+        sendMessage(f"got your message of len {msg_size}", 0, connection)
     connection.close()
 
 
