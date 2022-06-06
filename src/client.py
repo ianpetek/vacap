@@ -24,6 +24,8 @@ def recv_message(connection):
   message_text = connection.recv(msg_size).decode('utf-8')
   print(message_text)
 
+name = input()
+sendMessage(name, 0, ClientMultiSocket)
 recv_message(ClientMultiSocket)
 while True:
     Input = input('Hey there: ')

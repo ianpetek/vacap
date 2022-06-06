@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './ui/main_window.ui'
+# Form implementation generated from reading ui file './main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -14,30 +14,52 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(810, 592)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(190, 0, 591, 571))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 771, 571))
         self.stackedWidget.setObjectName("stackedWidget")
-        self.page = QtWidgets.QWidget()
-        self.page.setObjectName("page")
-        self.label = QtWidgets.QLabel(self.page)
-        self.label.setGeometry(QtCore.QRect(190, 110, 331, 281))
+        self.loginPage = QtWidgets.QWidget()
+        self.loginPage.setObjectName("loginPage")
+        self.UsernameTextBox = QtWidgets.QTextEdit(self.loginPage)
+        self.UsernameTextBox.setGeometry(QtCore.QRect(190, 160, 381, 51))
+        self.UsernameTextBox.setObjectName("UsernameTextBox")
+        self.ServerIpTextBox = QtWidgets.QTextEdit(self.loginPage)
+        self.ServerIpTextBox.setGeometry(QtCore.QRect(190, 260, 381, 51))
+        self.ServerIpTextBox.setObjectName("ServerIpTextBox")
+        self.PortTextBox = QtWidgets.QTextEdit(self.loginPage)
+        self.PortTextBox.setGeometry(QtCore.QRect(300, 360, 151, 41))
+        self.PortTextBox.setObjectName("PortTextBox")
+        self.label = QtWidgets.QLabel(self.loginPage)
+        self.label.setGeometry(QtCore.QRect(340, 130, 71, 17))
         self.label.setObjectName("label")
-        self.stackedWidget.addWidget(self.page)
-        self.page_2 = QtWidgets.QWidget()
-        self.page_2.setObjectName("page_2")
-        self.label_2 = QtWidgets.QLabel(self.page_2)
-        self.label_2.setGeometry(QtCore.QRect(140, 120, 331, 281))
+        self.label_2 = QtWidgets.QLabel(self.loginPage)
+        self.label_2.setGeometry(QtCore.QRect(340, 240, 71, 17))
         self.label_2.setObjectName("label_2")
-        self.stackedWidget.addWidget(self.page_2)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(10, 230, 121, 61))
-        self.pushButton.setObjectName("pushButton")
+        self.label_3 = QtWidgets.QLabel(self.loginPage)
+        self.label_3.setGeometry(QtCore.QRect(350, 340, 41, 17))
+        self.label_3.setObjectName("label_3")
+        self.LoginButton = QtWidgets.QPushButton(self.loginPage)
+        self.LoginButton.setGeometry(QtCore.QRect(300, 450, 141, 41))
+        self.LoginButton.setObjectName("LoginButton")
+        self.stackedWidget.addWidget(self.loginPage)
+        self.chatPage = QtWidgets.QWidget()
+        self.chatPage.setObjectName("chatPage")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.chatPage)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 50, 161, 491))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.ChatSelectLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.ChatSelectLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.ChatSelectLayout.setContentsMargins(0, 0, 0, 0)
+        self.ChatSelectLayout.setObjectName("ChatSelectLayout")
+        self.refreshButton = QtWidgets.QPushButton(self.chatPage)
+        self.refreshButton.setGeometry(QtCore.QRect(10, 20, 89, 25))
+        self.refreshButton.setObjectName("refreshButton")
+        self.stackedWidget.addWidget(self.chatPage)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 810, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -45,12 +67,15 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.pushButton.clicked.connect(MainWindow.btnClick) # type: ignore
+        self.LoginButton.clicked.connect(MainWindow.LoginButtonClick) # type: ignore
+        self.refreshButton.clicked.connect(MainWindow.RefreshButton) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "PRVA STRANICA"))
-        self.label_2.setText(_translate("MainWindow", "DRUGA STRANICA"))
-        self.pushButton.setText(_translate("MainWindow", "PushButton"))
+        self.label.setText(_translate("MainWindow", "Username"))
+        self.label_2.setText(_translate("MainWindow", "Server Ip"))
+        self.label_3.setText(_translate("MainWindow", "Port"))
+        self.LoginButton.setText(_translate("MainWindow", "Login"))
+        self.refreshButton.setText(_translate("MainWindow", "Refresh"))

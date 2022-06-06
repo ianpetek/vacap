@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>810</width>
+    <height>592</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,55 +17,126 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>0</x>
       <y>0</y>
-      <width>591</width>
+      <width>771</width>
       <height>571</height>
      </rect>
     </property>
-    <widget class="QWidget" name="page">
-     <widget class="QLabel" name="label">
+    <widget class="QWidget" name="loginPage">
+     <widget class="QTextEdit" name="UsernameTextBox">
       <property name="geometry">
        <rect>
         <x>190</x>
-        <y>110</y>
-        <width>331</width>
-        <height>281</height>
+        <y>160</y>
+        <width>381</width>
+        <height>51</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="ServerIpTextBox">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>260</y>
+        <width>381</width>
+        <height>51</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="PortTextBox">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>360</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>130</y>
+        <width>71</width>
+        <height>17</height>
        </rect>
       </property>
       <property name="text">
-       <string>PRVA STRANICA</string>
+       <string>Username</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="page_2">
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>120</y>
-        <width>331</width>
-        <height>281</height>
+        <x>340</x>
+        <y>240</y>
+        <width>71</width>
+        <height>17</height>
        </rect>
       </property>
       <property name="text">
-       <string>DRUGA STRANICA</string>
+       <string>Server Ip</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>340</y>
+        <width>41</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Port</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="LoginButton">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>450</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Login</string>
       </property>
      </widget>
     </widget>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>121</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
+    <widget class="QWidget" name="chatPage">
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>161</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="ChatSelectLayout" stretch="">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="refreshButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -73,7 +144,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>810</width>
      <height>22</height>
     </rect>
    </property>
@@ -83,23 +154,40 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>LoginButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>btnClick()</slot>
+   <slot>LoginButtonClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>65</x>
-     <y>288</y>
+     <x>385</x>
+     <y>496</y>
     </hint>
     <hint type="destinationlabel">
-     <x>86</x>
-     <y>182</y>
+     <x>806</x>
+     <y>498</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>refreshButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>RefreshButton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>794</x>
+     <y>96</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>btnClick()</slot>
+  <slot>LoginButtonClick()</slot>
+  <slot>RefreshButton()</slot>
  </slots>
 </ui>
