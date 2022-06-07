@@ -21,7 +21,7 @@ def accept_client(connection, address):
     addr_name_lookup[address] = name
     name_addr_lookup[name] = address
 
-    all_users_dump = json.dumps(name_addr_lookup)   
+    all_users_dump = json.dumps(list(name_addr_lookup.keys()))   
     sendMessage(all_users_dump, 0, connection)
 
     while True:
@@ -31,7 +31,7 @@ def accept_client(connection, address):
             recv_id = int.from_bytes(header[3:], 'big')
             message_text = connection.recv(msg_size)
             if(recv_id == 9888):
-              all_users_dump = json.dumps(name_addr_lookup) 
+              all_users_dump = json.dumps(list(name_addr_lookup.keys())) 
               sendMessage(all_users_dump, 9888, connection)
             else:
               sendMessage(f"got your message of len {msg_size}", 0, connection)

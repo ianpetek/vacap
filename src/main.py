@@ -11,10 +11,17 @@ from PyQt5.QtWidgets import (
 from main_window_ui import Ui_MainWindow
 from PyQt5 import uic
 
+'''
 class Window(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
-        uic.loadUi('C:\\Users\\Doma\\Desktop\\vacap\\src\\main_window.ui', self)
+        uic.loadUi('/home/ianp/dev/vacap/src/main_window.ui', self)
+'''
+
+class Window(QMainWindow):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        uic.loadUi('/home/ianp/dev/vacap_pavle/vacap/src/main_window.ui', self)
 
     def LoginButtonClick(self):
         username = self.UsernameTextBox.toPlainText()
@@ -23,8 +30,7 @@ class Window(QMainWindow):
 
         if(self.connectToServer(server_ip, server_port, username)):
             self.stackedWidget.setCurrentIndex(1)
-
-        self.updateUserList()
+            self.updateUserList()
 
     def sendMessage(self, msg, reciever_id, connection):
         enc_message = msg.encode('utf-8')
@@ -75,6 +81,8 @@ class Window(QMainWindow):
                 widget.setParent(None)
 
         for uname, addr in self.all_users.items():
+            if(uname == self.USERNAME):
+                continue
             self.btn = QPushButton()
             self.btn.setText(uname)
             self.btn.clicked.connect(
