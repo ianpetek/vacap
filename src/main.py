@@ -1,4 +1,5 @@
 #!/home/ianp/dev/vacap/venv/bin/python3
+from importlib.abc import TraversableResources
 import sys
 import socket
 import json
@@ -8,12 +9,12 @@ from PyQt5.QtWidgets import (
 )
 
 from main_window_ui import Ui_MainWindow
+from PyQt5 import uic
 
-
-class Window(QMainWindow, Ui_MainWindow):
+class Window(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setupUi(self)
+        uic.loadUi('C:\\Users\\Doma\\Desktop\\vacap\\src\\main_window.ui', self)
 
     def LoginButtonClick(self):
         username = self.UsernameTextBox.toPlainText()
@@ -80,6 +81,22 @@ class Window(QMainWindow, Ui_MainWindow):
                 lambda ch, text=uname: self.userSelectButtonClicked(text))
             self.ChatSelectLayout.addWidget(self.btn)
         self.ChatSelectLayout.addStretch()
+    
+    def LabelAppear(self):
+        self.label_4.setText('Kako koristiti ovaj program?\nNapišite svoj username po želji, upišite server IP i port.\nKada stisnete login pojavit će se lista sa svim dostupnim korisnicima\n s kojima možete komunicirati.')
+        self.pushButton.setHidden(True)
+        self.label_5.setHidden(True)
+
+    def LabelHide(self):
+        self.label_4.setText('')
+        self.pushButton.setHidden(False)
+        self.label_5.setHidden(False)
+        
+    def SendMessage(self):
+        text = self.MessageBar.toPlainText()
+        if text != '':
+            self.textBrowser.append(self.UsernameTextBox.toPlainText()+': '+text)
+        self.MessageBar.clear()
 
 
 if __name__ == "__main__":

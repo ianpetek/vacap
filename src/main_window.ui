@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>810</width>
-    <height>592</height>
+    <width>770</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(37, 211, 102);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
@@ -23,6 +26,12 @@
       <height>571</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(37, 211, 102);</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
     <widget class="QWidget" name="loginPage">
      <widget class="QTextEdit" name="UsernameTextBox">
       <property name="geometry">
@@ -32,6 +41,11 @@
         <width>381</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
       </property>
      </widget>
      <widget class="QTextEdit" name="ServerIpTextBox">
@@ -43,6 +57,11 @@
         <height>51</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
      </widget>
      <widget class="QTextEdit" name="PortTextBox">
       <property name="geometry">
@@ -52,6 +71,11 @@
         <width>151</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
       </property>
      </widget>
      <widget class="QLabel" name="label">
@@ -83,7 +107,7 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>360</x>
         <y>340</y>
         <width>41</width>
         <height>17</height>
@@ -102,10 +126,119 @@
         <height>41</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(183, 248, 255);</string>
+      </property>
       <property name="text">
        <string>Login</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>510</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(183, 248, 255);</string>
+      </property>
+      <property name="text">
+       <string>Priručnik za korištenje</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>521</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>510</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(183, 248, 255);</string>
+      </property>
+      <property name="text">
+       <string>Zatvori</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>30</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Franklin Gothic Heavy</family>
+        <pointsize>22</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>VacAp - Čet aplikacija</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>370</y>
+        <width>221</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../Downloads/output-onlinepngtools.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>pushButton_2</zorder>
+     <zorder>UsernameTextBox</zorder>
+     <zorder>ServerIpTextBox</zorder>
+     <zorder>PortTextBox</zorder>
+     <zorder>label</zorder>
+     <zorder>label_2</zorder>
+     <zorder>label_3</zorder>
+     <zorder>LoginButton</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_5</zorder>
+     <zorder>label_6</zorder>
     </widget>
     <widget class="QWidget" name="chatPage">
      <widget class="QWidget" name="verticalLayoutWidget">
@@ -117,7 +250,7 @@
         <height>491</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="ChatSelectLayout" stretch="">
+      <layout class="QVBoxLayout" name="ChatSelectLayout">
        <property name="sizeConstraint">
         <enum>QLayout::SetDefaultConstraint</enum>
        </property>
@@ -132,8 +265,91 @@
         <height>25</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(183, 248, 255);</string>
+      </property>
       <property name="text">
        <string>Refresh</string>
+      </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="MessageBar">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>500</y>
+        <width>491</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(213, 213, 213);</string>
+      </property>
+      <property name="plainText">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>500</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(183, 248, 255);</string>
+      </property>
+      <property name="text">
+       <string>Send</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>50</y>
+        <width>581</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>441</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>441</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(106, 214, 159);
+</string>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="lineWrapColumnOrWidth">
+       <number>0</number>
       </property>
      </widget>
     </widget>
@@ -144,8 +360,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>810</width>
-     <height>22</height>
+     <width>770</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -164,7 +380,7 @@
      <y>496</y>
     </hint>
     <hint type="destinationlabel">
-     <x>806</x>
+     <x>769</x>
      <y>498</y>
     </hint>
    </hints>
@@ -180,8 +396,56 @@
      <y>56</y>
     </hint>
     <hint type="destinationlabel">
-     <x>794</x>
+     <x>769</x>
      <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>LabelAppear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>543</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>70</x>
+     <y>618</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>LabelHide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>531</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>196</x>
+     <y>619</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>SendMessage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>718</x>
+     <y>543</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>673</x>
+     <y>619</y>
     </hint>
    </hints>
   </connection>
@@ -189,5 +453,8 @@
  <slots>
   <slot>LoginButtonClick()</slot>
   <slot>RefreshButton()</slot>
+  <slot>LabelAppear()</slot>
+  <slot>LabelHide()</slot>
+  <slot>SendMessage()</slot>
  </slots>
 </ui>
