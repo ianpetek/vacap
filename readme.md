@@ -6,7 +6,7 @@ Vacap is a bad rip-off of a good app like Whatsapp using python sockets and QT. 
 
 - See all online users and send messages to each of them separately
 - Login with your unique username so your friends recognize you
-- Expirience random crashes because be didn't do a lot of testing
+- Expirience random crashes because we didn't do a lot of testing
 
 ## Dependencies
 
