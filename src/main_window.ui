@@ -158,6 +158,25 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>390</y>
+        <width>211</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../images/output-onlinepngtools.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
      <zorder>pushButton_2</zorder>
      <zorder>UsernameTextBox</zorder>
      <zorder>label</zorder>
@@ -165,6 +184,7 @@
      <zorder>pushButton</zorder>
      <zorder>label_4</zorder>
      <zorder>label_5</zorder>
+     <zorder>label_6</zorder>
     </widget>
     <widget class="QWidget" name="chatPage">
      <widget class="QWidget" name="verticalLayoutWidget">
@@ -325,7 +345,7 @@
      <x>0</x>
      <y>0</y>
      <width>891</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
