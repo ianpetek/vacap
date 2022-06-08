@@ -1,19 +1,13 @@
-## Dependencies:
+# Vacap
+
+Vacap is a bad rip-off of a good app like Whatsapp using python sockets and QT. It's not really secure but nobody is gonna use it.
+
+## Features
+
+- See all online users and send messages to each of them separately
+- Login with your unique username so your friends recognize you
+- Expirience random crashes because be didn't do a lot of testing
+
+## Dependencies
+
 - pyqt5
-
-## upute za pavla:
-
-1. git clone ovaj repozitorij
-2. udjes u njega
-3. kad si u njemu nabacis jedan "python3 -m venv \venv"
-4. kad se napravi imas folder ./venv i u njemu samo pokrenes "\venv\Scripts\activate.bat"
-5. pip install pyqt5 pyqt5-tools
-6. u "venv\Lib\site-packages\pyqt5_tools\designer.exe" bi trebao biti designer u njemu radis ui
-
-
-## to add
-- message serialization:
-    (message length, message reciever) -> message
-- a way to save clients, name?
-
-- message encryption

@@ -1,5 +1,3 @@
-#!/home/ianp/dev/vacap/venv/bin/python3
-
 import socket
 import os
 from _thread import *
@@ -50,7 +48,7 @@ def accept_client(connection, address):
                 msg_reciever = name_client_lookup[recv[2]]
                 sendMessage(recv[0], recv[1], msg_reciever, recv_uname = name)
               except:
-                print("Couldnt send message")
+                print("Couldn't send message")
             else:
               sendMessage(f"got your message of len", 0, connection)
         else:
