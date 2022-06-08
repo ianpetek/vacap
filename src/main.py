@@ -4,6 +4,7 @@ import socket
 import json
 from _thread import *
 import time
+import os
 
 from PyQt5.QtWidgets import (
     QApplication, QDialog, QMainWindow, QMessageBox, QPushButton
@@ -17,25 +18,15 @@ SERVER_IP = '174.138.11.137'
 SERVER_PORT = 2004
 
 
-''' pavle verzija
+
 class Window(QMainWindow, Ui_MainWindow):
     curr_chat_user = ''
     all_chats_by_uname = {}
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        uic.loadUi('C:\\lokacija\\filea\\main_window.ui', self)
-'''
+        uic.loadUi('C:\\Users\\Doma\\Desktop\\vacapkojipavle\\vacap\\src\\main_window.ui', self)
 
-
-class Window(QMainWindow, Ui_MainWindow):
-    curr_chat_user = ''
-    all_chats_by_uname = {}
-
-    # Init function that setups the UI and starts the refreshChat interval timer
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setupUi(self)
         self.chat_refresh_timer = QTimer()
         self.chat_refresh_timer.setInterval(500)
         self.chat_refresh_timer.timeout.connect(self.refreshChat)
