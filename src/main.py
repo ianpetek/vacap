@@ -25,7 +25,7 @@ class Window(QMainWindow, Ui_MainWindow):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        uic.loadUi('C:\\Users\\Doma\\Desktop\\vacapkojipavle\\vacap\\src\\main_window.ui', self)
+        uic.loadUi(os.path.join(os.path.dirname(__file__), 'main_window.ui'), self)
 
         self.chat_refresh_timer = QTimer()
         self.chat_refresh_timer.setInterval(500)
